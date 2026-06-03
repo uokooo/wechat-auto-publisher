@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>公众号排版器 · 本地版</title>
+<title>公众号排版器 · v1.0.0</title>
+<meta name="version" content="1.0.0">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/atom-one-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -63,6 +64,7 @@ body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; bac
 .editor-toolbar .action-btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
 .editor-toolbar .action-btn.primary:hover { background:#06ad56; }
 .editor-toolbar .md-stats { margin-left:auto; font-size:11px; color:var(--text2); }
+.editor-toolbar .version-badge { font-size:10px; color:#888; background:#f0f0f0; padding:2px 6px; border-radius:8px; margin-left:8px; cursor:default; }
 .editor-textarea {
   flex:1; width:100%; padding:16px; border:none; resize:none;
   font-family:"SF Mono","Fira Code","Consolas",monospace;
@@ -136,6 +138,7 @@ body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; bac
       <button class="action-btn" onclick="loadSample()">📄 示例文章</button>
       <button class="action-btn" onclick="clearEditor()">🗑️ 清空</button>
       <span class="md-stats" id="mdStats">0 字符</span>
+      <span class="version-badge" title="GitHub: uokooo/wechat-auto-publisher">v1.0.0</span>
     </div>
     <textarea class="editor-textarea" id="mdInput"
       placeholder="# 在这里粘贴或输入 Markdown 内容&#10;&#10;支持标准 Markdown 语法：标题、列表、代码、引用、表格、图片等&#10;也可以上传 .md 文件，或从飞书/Notion/Word 直接粘贴&#10;&#10;💡 提示：左侧选择风格，预览区看效果，底部「复制到公众号」即可粘贴到微信编辑器"></textarea>
