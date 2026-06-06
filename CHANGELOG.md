@@ -1,5 +1,33 @@
 # 更新日志
 
+## v1.0.5 (2026-06-06)
+
+✨ Hermes Desktop App 发布文章 + 二维码验证通过
+
+### 新增
+- **全自动文章发布演示**：从零开始搜索资料 → 截图 → 写文章 → 上传微信CDN → 推草稿箱 → 归档，总耗时约7-8分钟
+- **二维码验证流程**：curl测试二维码URL返回HTTP 200后方可发布，确保二维码不裂图
+
+### 修复
+- **二维码URL刷新**：通过 `media/uploadimg` 重新上传二维码图片，获取新CDN链接，同步更新 `accounts.md`、`qrcode-url.md`、`article-footer.md`
+- **二维码尺寸调整**：从 `width:180px` 放大至 `width:280px`，手机上显示更清晰
+
+### 优化
+- 发布流程增加二维码验证步骤：推草稿前 curl 确认二维码 URL 返回 200
+- 归档索引更新规则补充：新文章插入最前面
+
+## v1.0.4 (2026-06-06)
+
+🐛 公众号文章底部二维码不显示
+
+### 修复
+- **文章使用了过期二维码URL**：`Token-Dashboard-介绍.html` 底部的 `mmbiz.qpic.cn` 链接已过期（HTTP 400），替换为 `references/qrcode-url.md` 中的正确URL（HTTP 200 有效）
+- **技能模板QR码用占位符而非固定值**：`wechat-article-author` 技能 footer 模板中 `QR_CDN_URL` 占位符改为**硬编码正确URL**，避免后续写文章再次引用错误链接
+
+### 优化
+- `wechat-article-publish` 技能发布流程中明确要求：**底部二维码也需随正文图一起上传**，通过 `media/uploadimg` 获取新 `mmbiz.qpic.cn` 链接
+- `CHANGELOG.md` 记录本次变更
+
 ## v1.0.3 (2026-06-03)
 
 🐛 归档库排序 + 防重复修复
