@@ -141,7 +141,13 @@ AI：Markdown 写入本地排版器，发链接给你
 
 ## 🖼 截图
 
-![排版器界面](screenshot.png)
+| ![排版器界面](screenshot.png)
+
+### AI 智绘 · 图工坊 — 本地 AI 影像系统
+
+![AI 智绘界面](examples/ai-smart-draw-demo.jpg)
+
+暗色主题的 AI 影像创作系统，支持文生图、图编辑、一键换装、扩图等。底层基于 ComfyUI，跑在本地 GPU 上。
 
 ---
 

@@ -44,7 +44,13 @@
 
 1. 将 Markdown 转换为公众号兼容格式
 2. 通过微信 API 创建草稿（需提前配好 API 凭证和 IP 白名单）
-3. 通知用户：文章已推到草稿箱，请在手机微信 app 上手动发布
+   - ⚠️ 草稿 `POST /cgi-bin/draft/add` 的 JSON body 字段名是 **`articles`**（数组），不是 `news_item`
+   - 示例：
+     ```json
+     {"articles":[{"title":"...","author":"uoko","content":"<section>...</section>",
+       "thumb_media_id":"...","need_open_comment":0,"only_fans_can_comment":0,"is_original":1}]}
+     ```
+3. 通知用户：文章已推到草稿箱，请在手机 app 上手动发布
 
 > ⚠️ **前提条件**：需要配置好微信公众平台 API（详见下方【前置准备】）
 

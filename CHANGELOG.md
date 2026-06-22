@@ -1,5 +1,15 @@
 # 更新日志
 
+## v1.0.6 (2026-06-22)
+
+🐛 修复 draft API 字段名 + 新增 AI 智绘截图
+
+### 修复
+- **draft/add 字段名错误**：草稿 JSON body 中 `news_item` 字段名应为 `articles`（微信新版 draft API）。旧字段名返回 `44003 empty news data`，已修正文档和 `AI助手工作流.md`
+
+### 新增
+- **AI 智绘截图**：`examples/ai-smart-draw-demo.jpg` — AI 智绘系统主界面截图，在 README 中展示
+
 ## v1.0.5 (2026-06-06)
 
 ✨ Hermes Desktop App 发布文章 + 二维码验证通过
